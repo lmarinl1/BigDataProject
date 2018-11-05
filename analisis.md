@@ -16,8 +16,11 @@ En lo que concierne a las empresas:
 > -   **52%** de las empresas dicen que las redes sociales les han ayudado a captar nuevos clientes.
 
 Por otro lado, las redes sociales más utilizadas por los negocios son [Twitter](https://twitter.com), en especial en el sector tecnológico y de software, y [LinkedIn](https://www.linkedin.com/), cuando se ofrecen servicios profesionales y marketing; aunque tampoco hay que dejar de lado a [Facebook](https://www.facebook.com/) y [Pinterest](https://co.pinterest.com/), que cuentan con un gran número de usuarios.
-|  |  |
-|--|--|
+
+
+
+|   |   |
+|----|----|
 | ![](http://pngimg.com/uploads/twitter/twitter_PNG34.png) | **Twitter es una de las herramientas más usadas en la red social. Las técnicas de análisis de texto y sentimiento permiten a las organizaciones acercarse a la emoción verdadera** que reside detrás de cada actualización de estado, de cada publicación o de  [cada Tweet que lanzan sus clientes.](https://blog.es.logicalis.com/analytics/redes-sociales-como-fuentes-de-datos-el-caso-de-tweeter)[2]|
 |||
 |||
