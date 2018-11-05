@@ -23,7 +23,6 @@ Por otro lado, las redes sociales más utilizadas por los negocios son [Twitter]
 |----|----|
 | ![](http://pngimg.com/uploads/twitter/twitter_PNG34.png) | **Twitter es una de las herramientas más usadas en la red social. Las técnicas de análisis de texto y sentimiento permiten a las organizaciones acercarse a la emoción verdadera** que reside detrás de cada actualización de estado, de cada publicación o de  [cada Tweet que lanzan sus clientes.](https://blog.es.logicalis.com/analytics/redes-sociales-como-fuentes-de-datos-el-caso-de-tweeter)[2]|
 |||
-|||
 
 **Problemática:** Un documental creado por la firma *Nicolas Glimois and Christophe Weber* denominado [**Pepsi vs Cola: The Marketing Battle of the Century**](https://www.amazon.com/Pepsi-Cola-Marketing-Battle-Century/dp/B074QW7KZZ), enmarca la gran batalla que han vivido las 2 marcas de bebida sabor cola más reconocidas a nivel mundial.
 En el documental se evidencian los altibajos de cada una de las compañías y como se han convertido en ícono de la competencia capitalista norteaméricana, una competencia que las ha catapultado al éxito mundial.[3]
@@ -46,8 +45,24 @@ Esto muestra un panorama muy equitativo para la fecha.
 ## Sistema de ingesta de datos - Tecnologías 
  Para la ingesta de datos se pretende utilizar Apache Flume, un software distribuido que permite recolectar y mover grandes cantidades de datos, ya que hace posible recolectar datos de Twitter y almacenarlos en HDFS. Para esto también se requierecrear una aplicación de Twitter que nos premita tener acceso a los Tweets. 
  
+|   |   |
+|----|----|
+| ![](http://knowdimension.com/en/wp-content/uploads/sites/2/2018/05/flume-logo-270x250.png) | [Apache Flume](https://flume.apache.org/) es un servicio distribuido, fiable, y altamente disponible para recopilar, agregar, y mover eficientemente grandes cantidades de datos. Tiene una arquitectura sencilla y flexible basada en flujos de datos en streaming. Es robusto y tolerante a fallos, con mecanismos de fiabilidad configurables y muchos mecanismos de conmutación por error (failover) y recuperación. Utiliza un modelo de datos sencillo y extensible que permite la creación de aplicaciones analíticas en línea [5]|
+|||
+
+ 
 ## Almacenamiento de datos - Tecnologías
 Para el almacenamiento de datos se utilizará HDFS con Hive. Esto se debe a que la naturaleza de los datos a almacenar se maneja más fácil mediante la estructura similar a tablas y queries SQL. 
+
+|   |   |
+|----|----|
+| ![](http://www.happyminds.es/wp-content/uploads/2013/01/hdfs-logo.jpg) | [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) es el sistema de ficheros distribuido de Hadoop. El calificativo «distribuido» expresa la característica más significativa de este sistema de ficheros, que es su capacidad para almacenar los archivos en un clúster de varias máquinas. Esta característica es imperante cuando se pretenden almacenar grandes cantidades de datos, puesto que en general no es posible almacenar cientos de terabytes o petabytes en una única máquina. [6]|
+|||
+
+|   |   |
+|----|----|
+| ![](https://redash.io/assets/images/integrations/hive.png) | [Apache Hive](https://hive.apache.org/) es una infraestructura de almacenamiento de datos construida sobre Hadoop para proporcionar agrupación, consulta, y análisis de datos. Inicialmente desarrollado por Facebook, Apache Hive es ahora utilizada y desarrollado por otras empresas como Netflix y la Financial Industry Regulatory Authority (FINRA). Amazon mantiene una derivación de software de Apache Hive incluida en Amazon Elastic MapReduce en sus servicios Amazon Web Services. [7]|
+|||
 
 ## Análisis de datos - Tecnologías 
  Para analizar los datos es conveniente utilizar una biblioteca de Natural Language Processing (NLP) y Spark cuenta con estas capacidades. Existen diferentes APIs que permiten procesar la informaciónd e Tweets para tener una idea de los sentimientos que éstos quieren expresar.
@@ -56,3 +71,6 @@ Para el almacenamiento de datos se utilizará HDFS con Hive. Esto se debe a que 
 [2] [Técnicas de análisis Twitter: herramientas y aplicaciones que te permiten conocer mejor a tus clientes](https://blog.es.logicalis.com/analytics/tecnicas-de-analisis-twitter-herramientas-y-aplicaciones-que-te-permiten-conocer-mejor-a-tus-clientes)
 [3] [Coca-Cola vs Pepsi duelo de titanes](https://www.reasonwhy.es/reportaje/coca-cola-vs-pepsi-duelo-de-titanes)
 [4] [Coca-Cola vs Pepsi la increible historia de la guerra de los refrescos de cola](https://www.marketingdirecto.com/anunciantes-general/anunciantes/coca-cola-vs-pepsi-la-increible-historia-de-la-guerra-de-los-refrescos-de-cola)
+[5] [Apache Flume](https://es.wikipedia.org/wiki/Apache_Flume)
+[6] [HDFS](https://es.wikipedia.org/wiki/Hadoop_Distributed_File_System)
+[7] [Apache Hive](https://es.wikipedia.org/wiki/Apache_Hive)
