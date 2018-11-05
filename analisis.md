@@ -97,10 +97,11 @@ Para el almacenamiento de datos se utilizará HDFS con Hive. Esto se debe a que 
 ## Análisis de datos - Tecnologías 
  Para analizar los datos es conveniente utilizar una biblioteca de Natural Language Processing (NLP) y Spark cuenta con estas capacidades. Existen diferentes APIs que permiten procesar la informaciónd e Tweets para tener una idea de los sentimientos que éstos quieren expresar.
 
-[1] [¿Por qué son importantes las redes sociales en los negocios?](https://jorgecastro.mx/por-que-son-importantes-las-redes-sociales-en-los-negocios/)
-[2] [Técnicas de análisis Twitter: herramientas y aplicaciones que te permiten conocer mejor a tus clientes](https://blog.es.logicalis.com/analytics/tecnicas-de-analisis-twitter-herramientas-y-aplicaciones-que-te-permiten-conocer-mejor-a-tus-clientes)
-[3] [Coca-Cola vs Pepsi duelo de titanes](https://www.reasonwhy.es/reportaje/coca-cola-vs-pepsi-duelo-de-titanes)
-[4] [Coca-Cola vs Pepsi la increible historia de la guerra de los refrescos de cola](https://www.marketingdirecto.com/anunciantes-general/anunciantes/coca-cola-vs-pepsi-la-increible-historia-de-la-guerra-de-los-refrescos-de-cola)
-[5] [Apache Flume](https://es.wikipedia.org/wiki/Apache_Flume)
-[6] [HDFS](https://es.wikipedia.org/wiki/Hadoop_Distributed_File_System)
-[7] [Apache Hive](https://es.wikipedia.org/wiki/Apache_Hive)
+## Referencias
+- [1] [¿Por qué son importantes las redes sociales en los negocios?](https://jorgecastro.mx/por-que-son-importantes-las-redes-sociales-en-los-negocios/)
+- [2] [Técnicas de análisis Twitter: herramientas y aplicaciones que te permiten conocer mejor a tus clientes](https://blog.es.logicalis.com/analytics/tecnicas-de-analisis-twitter-herramientas-y-aplicaciones-que-te-permiten-conocer-mejor-a-tus-clientes)
+- [3] [Coca-Cola vs Pepsi duelo de titanes](https://www.reasonwhy.es/reportaje/coca-cola-vs-pepsi-duelo-de-titanes)
+- [4] [Coca-Cola vs Pepsi la increible historia de la guerra de los refrescos de cola](https://www.marketingdirecto.com/anunciantes-general/anunciantes/coca-cola-vs-pepsi-la-increible-historia-de-la-guerra-de-los-refrescos-de-cola)
+- [5] [Apache Flume](https://es.wikipedia.org/wiki/Apache_Flume)
+- [6] [HDFS](https://es.wikipedia.org/wiki/Hadoop_Distributed_File_System)
+- [7] [Apache Hive](https://es.wikipedia.org/wiki/Apache_Hive)
