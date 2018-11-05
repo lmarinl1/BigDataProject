@@ -25,8 +25,16 @@ Por otro lado, las redes sociales más utilizadas por los negocios son [Twitter]
 |||
 |||
 
-**Problemática**
+**Problemática:** Un documental creado por la firma *Nicolas Glimois and Christophe Weber* denominado [**Pepsi vs Cola: The Marketing Battle of the Century**](https://www.amazon.com/Pepsi-Cola-Marketing-Battle-Century/dp/B074QW7KZZ), enmarca la gran batalla que han vivido las 2 marcas de bebida sabor cola más reconocidas a nivel mundial.
+En el documental se evidencian los altibajos de cada una de las compañías y como se han convertido en ícono de la competencia capitalista norteaméricana, una competencia que las ha catapultado al éxito mundial.[3]
 
+Al 2010 tenemos un panorama publicado por la reconocida página de Mercadeo: [MarketingDirecto](https://www.marketingdirecto.com), representado por la siguiente imagen:[4]
+
+![Panorama histórico](https://www.marketingdirecto.com/wp-content/uploads/2011/11/10.jpg)
+
+Esto muestra un panorama muy equitativo para la fecha.
+
+#### El objetivo del presente ejercicio es realizar un breve estudio del panorama actual sobre el panorama de Coca-Cola y Pepsi, en el escenario de Twitter como red social influyente en la actualidad, este estudio consiste en un análisis de sentimientos de cada uno de los usuarios de Twitter que en sus Tweets han puesto algo relacionado con cualquiera de las dos empresas. 
 
 ## Arquitectura preliminar de datos
  - **Ciclo de Vida:**
@@ -39,10 +47,12 @@ Por otro lado, las redes sociales más utilizadas por los negocios son [Twitter]
  Para la ingesta de datos se pretende utilizar Apache Flume, un software distribuido que permite recolectar y mover grandes cantidades de datos, ya que hace posible recolectar datos de Twitter y almacenarlos en HDFS. Para esto también se requierecrear una aplicación de Twitter que nos premita tener acceso a los Tweets. 
  
 ## Almacenamiento de datos - Tecnologías
-Para el almacenamiento de datos se utilizará HDFS con HBase. Esto se debe a que la naturaleza de los datos a almacenar se maneja más fácil mediante la estructura similar a tablas y queries SQL. 
+Para el almacenamiento de datos se utilizará HDFS con Hive. Esto se debe a que la naturaleza de los datos a almacenar se maneja más fácil mediante la estructura similar a tablas y queries SQL. 
 
 ## Análisis de datos - Tecnologías 
  Para analizar los datos es conveniente utilizar una biblioteca de Natural Language Processing (NLP) y Spark cuenta con estas capacidades. Existen diferentes APIs que permiten procesar la informaciónd e Tweets para tener una idea de los sentimientos que éstos quieren expresar.
 
 [1] [¿Por qué son importantes las redes sociales en los negocios?](https://jorgecastro.mx/por-que-son-importantes-las-redes-sociales-en-los-negocios/)
 [2] [Técnicas de análisis Twitter: herramientas y aplicaciones que te permiten conocer mejor a tus clientes](https://blog.es.logicalis.com/analytics/tecnicas-de-analisis-twitter-herramientas-y-aplicaciones-que-te-permiten-conocer-mejor-a-tus-clientes)
+[3] [Coca-Cola vs Pepsi duelo de titanes](https://www.reasonwhy.es/reportaje/coca-cola-vs-pepsi-duelo-de-titanes)
+[4] [Coca-Cola vs Pepsi la increible historia de la guerra de los refrescos de cola](https://www.marketingdirecto.com/anunciantes-general/anunciantes/coca-cola-vs-pepsi-la-increible-historia-de-la-guerra-de-los-refrescos-de-cola)
