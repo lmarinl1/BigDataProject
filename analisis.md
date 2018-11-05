@@ -35,7 +35,7 @@ Esto muestra un panorama muy equitativo para la fecha.
 
 #### El objetivo del presente ejercicio es realizar un breve estudio del panorama actual sobre el panorama de Coca-Cola y Pepsi, en el escenario de Twitter como red social influyente en la actualidad, este estudio consiste en un análisis de sentimientos de cada uno de los usuarios de Twitter que en sus Tweets han puesto algo relacionado con cualquiera de las dos empresas. 
 
-## Arquitectura preliminar de datos
+## Arquitectura 
 
  - **Ciclo de Vida:**
  El ciclo de vida de los datos comienza en los Tweets que producen los usurios de Twitter, aquellos tweets deben estar relacionados con unas palabras a las que llamaremos **keywords**, que para nuestro caso son "Coca-cola" y "Pepsi". Twitter entonces proveera una interfaz por medio de una API ([Apps Twitter](https://apps.twitter.com/)), dicha API sera accedida por un agente que tomara los datos bajo tecnicas de DataStreaming y lo almacenara en alguna tecnologia de Storage (Para el caso HDFS).
@@ -43,9 +43,21 @@ Esto muestra un panorama muy equitativo para la fecha.
  #### Flujo de Datos desde WebServer hasta hdfs
  ![](https://flume.apache.org/_images/DevGuide_image00.png)
  
- 
- 
+
  - **Almacenamiento:**
+ Dado que es un proceso constante e inserción de datos, es fundamental tener un sistema de almacenamiento escalable que garantice el acceso a los datos, y que ojalá sea de una manera sencilla. Inicialmente los datos son extraidos con un formato [JSON](https://es.wikipedia.org/wiki/JSON) del cual pueden extraerse atributos fundamentales para el análisis.
+ 
+ Esquema de lectura:
+ ~~~
+id                      bigint                  from deserializer                                                                       created_at              string                  from deserializer                                                                       source                  string                  from deserializer                                                                       favorited               boolean                 from deserializer                                                                       retweet_count           int                     from deserializer                                                                       retweeted_status        struct<text:string,user:struct<screen_name:string,name:string>> from deserializer                               entities struct<urls:array<struct<expanded_url:string>>,user_mentions:array<struct<screen_name:string,name:string>>,hashtags:array<struct<text:string>>>      from deserializer                                                                                                            text                    string                  from deserializer                                                                       lang                    string                  from deserializer                                                                        user                    struct<screen_name:string,name:string,friends_count:int,followers_count:int,statuses_count:int,verified:boolean,utc_offset:in
+t,time_zone:string>     from deserializer                                                                                                in_reply_to_screen_name string                  from deserializer
+ ~~~
+ 
+ Para acceder a los datos se requiere un sistema que permita realizar agrupaciones, consultas, y análisis de esos mismos datos.
+ 
+ Arquitectura de Acceso:
+ ![](http://www.bodhtree.com/blog/wp-content/uploads/2012/09/Hive-Architecture1.png)
+ 
  - **Procesamiento:**
 
 ## Fuentes y Naturaleza de los datos - Tecnologías
