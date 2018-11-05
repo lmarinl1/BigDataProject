@@ -36,14 +36,22 @@ Esto muestra un panorama muy equitativo para la fecha.
 #### El objetivo del presente ejercicio es realizar un breve estudio del panorama actual sobre el panorama de Coca-Cola y Pepsi, en el escenario de Twitter como red social influyente en la actualidad, este estudio consiste en un análisis de sentimientos de cada uno de los usuarios de Twitter que en sus Tweets han puesto algo relacionado con cualquiera de las dos empresas. 
 
 ## Arquitectura preliminar de datos
+
  - **Ciclo de Vida:**
+ El ciclo de vida de los datos comienza en los Tweets que producen los usurios de Twitter, aquellos tweets deben estar relacionados con unas palabras a las que llamaremos **keywords**, que para nuestro caso son "Coca-cola" y "Pepsi". Twitter entonces proveera una interfaz por medio de una API ([Apps Twitter](https://apps.twitter.com/)), dicha API sera accedida por un agente que tomara los datos bajo tecnicas de DataStreaming y lo almacenara en alguna tecnologia de Storage (Para el caso HDFS).
+ 
+ #### Flujo de Datos desde WebServer hasta hdfs
+ ![](https://flume.apache.org/_images/DevGuide_image00.png)
+ 
+ 
+ 
  - **Almacenamiento:**
  - **Procesamiento:**
 
 ## Fuentes y Naturaleza de los datos - Tecnologías
 
 ## Sistema de ingesta de datos - Tecnologías 
- Para la ingesta de datos se pretende utilizar Apache Flume, un software distribuido que permite recolectar y mover grandes cantidades de datos, ya que hace posible recolectar datos de Twitter y almacenarlos en HDFS. Para esto también se requierecrear una aplicación de Twitter que nos premita tener acceso a los Tweets. 
+ Para la ingesta de datos se pretende utilizar **Apache Flume**, un software distribuido que permite recolectar y mover grandes cantidades de datos, ya que hace posible recolectar datos de Twitter y almacenarlos en HDFS. Para esto también se requierecrear una aplicación de Twitter que nos premita tener acceso a los Tweets. 
  
 |   |   |
 |----|----|
