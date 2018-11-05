@@ -49,18 +49,22 @@ Esto muestra un panorama muy equitativo para la fecha.
  
  Esquema de lectura:
  ~~~
-id                      bigint                  from deserializer                                                                       
-created_at              string                  from deserializer                                                                       
-source                  string                  from deserializer                                                                       
-favorited               boolean                 from deserializer                                                                       
-retweet_count           int                     from deserializer                                                                       
-retweeted_status        struct<text:string,user:struct<screen_name:string,name:string>> from deserializer                               
-entities struct<urls:array<struct<expanded_url:string>>,user_mentions:array<struct<screen_name:string,name:string>>,hashtags:array<struct<text:string>>>      from deserializer                                                                                                           
-text                    string                  from deserializer                                                                       
-lang                    string                  from deserializer                                                                        
-user                    struct<screen_name:string,name:string,friends_count:int,followers_count:int,statuses_count:int,verified:boolean,utc_offset:in
-t,time_zone:string>     from deserializer                                                                                                
-in_reply_to_screen_name string                  from deserializer
+hive> describe tweets
+ OK
+  id                      bigint                  from deserializer                                                                    > 
+  created_at              string                  from deserializer                                                                     
+  source                  string                  from deserializer                                                                     
+  favorited               boolean                 from deserializer
+  retweet_count           int                     from deserializer 
+  retweeted_status        struct<text:string,user:struct<screen_name:string,name:string>> from deserializer
+  entities struct<urls:array<struct<expanded_url:string>>,user_mentions:array<struct<screen_name:string,name:string>>,hashtags:array<struct<text:string>>>      from deserializer
+  text                    string                  from deserializer
+  lang                    string                  from deserializer
+  user                       struct<screen_name:string,name:string,friends_count:int,followers_count:int,statuses_count:int,verified:boolean,utc_offset:in
+t,time_zone:string>     from deserializer
+   in_reply_to_screen_name string                  from deserializer
+   
+ hive>
  ~~~
  
  Para acceder a los datos se requiere un sistema que permita realizar agrupaciones, consultas, y análisis de esos mismos datos.
