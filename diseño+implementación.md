@@ -45,4 +45,4 @@ La ingesta de datos fue implementada con flume. Se realizó un archivo de config
 
 # Referencias
 
-[1] https://nlp.johnsnowlabs.com/
+* [1] https://nlp.johnsnowlabs.com/
