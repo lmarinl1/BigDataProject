@@ -73,14 +73,18 @@ export FLUME_CLASSPATH=$FLUME_CONF_DIR
 export PATH=”$FLUME_HOME/bin:$PATH”
 ```
 
-### Run Flume and collect data into HDFS.
+### Ejecutar Flume y Recolectar Tweets para poner dentro de HDFS.
 
-Start Hadoop first. $start-all.sh
-Start flume using the below command
-(Assuming you are inside ‘/home/ultron/work/apache-flume-1.6.0-bin’ )
-
-$bin/flume-ng agent — conf ./conf/ -f conf/flume.conf -Dflume.root.logger=DEBUG,console -n TwitterAgent
-After a couple of minutes the Tweets should appear in HDFS.
-
-Visit localhost:50070 in your browser
-Navigate to localhost:50070/explorer.html#/user/flume/tweets/
+1. En primera instacia poner a ejecutar Hadoop
+```
+$ start-all.sh
+```
+2. Iniciar Flum con el siguiente comando
+```
+$ flume-ng agent --conf . -f twitter.conf -Dflume.root.logger=DEBUG,console -n TwitterAgent
+```
+3. Después de unos minutos los Tweets deberían aparecer en la ubicación dada de HDFS
+Para el caso:
+```
+$ hdfs dfs -ls /user/dfonseca/twitter
+```
