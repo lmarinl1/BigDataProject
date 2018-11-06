@@ -55,28 +55,25 @@ TwitterAgent.sources.Twitter.channels = MemChannel
 TwitterAgent.sinks.HDFS.channel = MemChannel
 ```
 
-Los componentes de <consumerKey>, <consumerSecret>, <accessToken> y <accessTokenSecret> deben ser reemplazados con los elementos obtenidos desde una app de twitter ([Obten una App](https://dev.twitter.com/apps)). y TwitterAgent.sinks.HDFS.hdfs.path should point to the NameNode and the location in HDFS where the tweets will go to.
+Los componentes de *\<consumerKey>*, *\<consumerSecret>*, *\<accessToken>* y *\<accessTokenSecret>* deben ser reemplazados con los elementos obtenidos desde una app de twitter ([Obten una App](https://dev.twitter.com/apps)). y TwitterAgent.sinks.HDFS.hdfs.path es la direccion a donde iran todos los Tweets estraidos. 
+
+> *Nota:* Aunque HDFS es considerado sin esquema, o más bien *Scheme On Read*, los Tweets son almacenados en un formato JSON en la dirección propuesta previamente, cada uno puede verse como un documento individual desde una interfaz gráfica como Ambari.
+
+Los valores de TwitterAgent.sources.Twitter.keywords pueden ser modificados para obtener otras temáticas de los Tweets como por ejemplo: Futbol, Peliculas, Colombia, etc. 
 
 
-The TwitterAgent.sources.Twitter.keywords value can be modified to get the tweets for some other topic like football, movies etc.
 
-Add following to .bashrc file
+### Variables de inicializacion de FLUME 
+Agregar las siguientes al archivo `.bashrc`:
 
-$ gedit ~/.bashrc
-### FLUME VARIABLES START
-
+```
 export FLUME_HOME=/home/ultron/work/apache-flume-1.6.0-bin
 export FLUME_CONF_DIR=$FLUME_HOME/conf
 export FLUME_CLASSPATH=$FLUME_CONF_DIR
 export PATH=”$FLUME_HOME/bin:$PATH”
-### FLUME VARIABLES END
+```
 
-Run following command to reload new .bashrc file
-
-$source ~/.bashrc
-— — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
-
-Run Flume and collect data into HDFS.
+### Run Flume and collect data into HDFS.
 
 Start Hadoop first. $start-all.sh
 Start flume using the below command
