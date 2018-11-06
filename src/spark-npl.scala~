@@ -1,0 +1,5 @@
+import com.johnsnowlabs.nlp.base._
+import org.apache.spark.sql.SparkSession
+import com.johnsnowlabs.nlp.pretrained.pipelines.en.SentimentPipeline
+
+val tweets = spark.sql("select text from tweets where lang = 'en'")
