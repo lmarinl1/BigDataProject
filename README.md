@@ -88,3 +88,25 @@ Para el caso:
 ```
 $ hdfs dfs -ls /user/dfonseca/twitter
 ```
+
+## Spark-NLP
+
+### Instalación
+
+Para instalar la bilbioteca de [Spark-NLP](https://nlp.johnsnowlabs.com) en consola se pueden seguir los pasos descritos en su página web, en <https://nlp.johnsnowlabs.com/quickstart.html>.
+
+Para su instalación de Zeppelin, seguir los pasos aquí descritos:
+
+1. Ingresar a Zeppelin y buscar la opción Interpreter en el menú de usuario en la esquina superior derecha, tal como se ve en la imagen 1.
+
+![img1][imgs/img0.png]
+
+2. Agregar el repositorio de los paquetes de Spark a la lista de repositorios de Zeppelin haciendo click en el botón Repository y después en el botón +. En el formulario que aparece después de esto llenar el campo id con un nombre para identificar el repositorio y en url copiar la dirección <https://dl.bintray.com/spark-packages/maven/> tal como se ve en la imagen 2.
+
+![img2][imgs/img1.png]
+
+3. Buscar el interprete de la versión a utilizar de Spark (en nuestro caso spark2), darle click al botón edit y agregar el paquete *JohnSnowLabs:spark-nlp:1.7.2* y el jar ubicado en la dirección */usr/hdp/2.6.5.0-292/hive2/lib/hive-hcatalog-core.jar* en la lista de dependencias, tal como se ve en la imagen 3. Este último es para compatibilidad con el formato utilizado para formar la tabla en Hive de los tweets recuperados anteriormente.
+
+![img3][imgs/img2.png]
+
+4. Guardar los cambios y probar el código en Zeppelin.
