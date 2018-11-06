@@ -18,40 +18,44 @@ Este .jar contiene todas las clases necesarias de java para extraer los Tweets e
 
 El archivo se llama [twitter.conf](https://github.com/lmarinl1/BigDataProject/blob/master/twitter.conf) el cual debe tener todas las configuraciones del agente (flume, memory and hdfs) y se define de la siguiente manera:
 
+**Parte 1:** Nombrar los componentes del agente a configurar
 ```
-# Naming the components on the current agent.  
 TwitterAgent.sources = Twitter  
 TwitterAgent.channels = MemChannel 
 TwitterAgent.sinks = HDFS    
+```
 
-# Describing/Configuring the source  
+**Parte 2:** Descripcion y configuracion de la fuente
+```
 TwitterAgent.sources.Twitter.type = com.cloudera.flume.source.TwitterSource 
-TwitterAgent.sources.Twitter.consumerKey = GT0v7i1VAWEfWgK4REVYEOHbW  
-TwitterAgent.sources.Twitter.consumerSecret = WoTe8VkRoSNveSiiBDzDpFSKFvRV1rrvnbKZ8ciUYQljGHcvvO 
-TwitterAgent.sources.Twitter.accessToken = 1057372625788379136-Mwlf1kH6vam219aqNtuLYE2rQuy7V4
-TwitterAgent.sources.Twitter.accessTokenSecret = vemKHK4FunGAj0rzGEgIqKSDdAvZ6hAZ4c32vogb8FdXx 
+TwitterAgent.sources.Twitter.consumerKey = <CustomerKey>
+TwitterAgent.sources.Twitter.consumerSecret = <ConsumerSecret> 
+TwitterAgent.sources.Twitter.accessToken = <AccessToken>
+TwitterAgent.sources.Twitter.accessTokenSecret = <AccessTokenSecret>
 TwitterAgent.sources.Twitter.keywords = Pepsi, Coca-cola
+```
 
-# Describing/Configuring the sink   
+**Parte 3:** Descripcion de la sincronizacion
+```
 TwitterAgent.sinks.HDFS.type = hdfs  
-TwitterAgent.sinks.HDFS.hdfs.path = hdfs://sandbox-hdp.hortonworks.com:8020/user/dfonseca/twitter
+TwitterAgent.sinks.HDFS.hdfs.path = hdfs://sandbox-hdp.hortonworks.com:8020/user/<userName>/twitter
 TwitterAgent.sinks.HDFS.hdfs.fileType = DataStream  
 TwitterAgent.sinks.HDFS.hdfs.writeFormat = Text  
 TwitterAgent.sinks.HDFS.hdfs.batchSize = 1000 
 TwitterAgent.sinks.HDFS.hdfs.rollSize = 0  
 TwitterAgent.sinks.HDFS.hdfs.rollCount = 10000 
+```
 
-# Describing/Configuring the channel 
+**Parte 4:** Configuracion del canal
+```
 TwitterAgent.channels.MemChannel.type = memory  
 TwitterAgent.channels.MemChannel.capacity = 10000  
 TwitterAgent.channels.MemChannel.transactionCapacity = 100 
-
-# Binding the source and sink to the channel  
 TwitterAgent.sources.Twitter.channels = MemChannel 
 TwitterAgent.sinks.HDFS.channel = MemChannel
 ```
 
-The consumerKey, consumerSecret, accessToken and accessTokenSecret have to be replaced with those obtained from https://dev.twitter.com/apps. And, TwitterAgent.sinks.HDFS.hdfs.path should point to the NameNode and the location in HDFS where the tweets will go to.
+Los componentes de <consumerKey>, <consumerSecret>, <accessToken> y <accessTokenSecret> deben ser reemplazados con los elementos obtenidos desde una app de twitter ([Obten una App](https://dev.twitter.com/apps)). y TwitterAgent.sinks.HDFS.hdfs.path should point to the NameNode and the location in HDFS where the tweets will go to.
 
 
 The TwitterAgent.sources.Twitter.keywords value can be modified to get the tweets for some other topic like football, movies etc.
