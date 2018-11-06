@@ -72,7 +72,7 @@ t,time_zone:string>     from deserializer
  Arquitectura de Acceso:
  ![](http://www.bodhtree.com/blog/wp-content/uploads/2012/09/Hive-Architecture1.png)
  
- - **Procesamiento:**
+ - **Procesamiento:** Utilizando una plataforma de procesamiento distribuido en memoria como Apache Spark, se recuperan los tweets capturados para procesarlos utilizando tecnologías de procesamiento de lenguaje natural. Mediante este proceso, se realiza un análisis de sentimientos en el conjunto de tweets de manera que se puedan identificar cuantos se pueden identificar como una impresión positiva  y una impresión negativa de la marca analizada.
 
 ## Fuentes y Naturaleza de los datos - Tecnologías
 
