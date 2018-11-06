@@ -1,18 +1,24 @@
 # BigDataProject
 
+## Flume
 ### Install and Configure Flume
 
 1. Descargar Flume [Aqui](http://flume.apache.org/download.html).
 
 2. Mover [flume-sources-1.0-SNAPSHOT.jar](https://github.com/lmarinl1/BigDataProject/blob/master/lib/flume-sources-1.0-SNAPSHOT.jar) al  classpath, y ubicar dicho fichero en **conf/flume-env.sh**.
 
-`$ EXPORT JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64`
-`$ EXPORT FLUME_CLASSPATH=/usr/hdp/current/flume-server/lib/flume-sources-1.0-SNAPSHOT.jar`
-
+```
+$ EXPORT JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64`
+$ EXPORT FLUME_CLASSPATH=/usr/hdp/current/flume-server/lib/flume-sources-1.0-SNAPSHOT.jar
+```
 Este .jar contiene todas las clases necesarias de java para extraer los Tweets e incertarlos en un lugar de HDFS.
 
-The conf/flume-twitter.conf should have all the agents (flume, memory and hdfs) defined as below.
 
+### Archivo de configuración de un agente de Flume
+
+El archivo se llama [twitter.conf](https://github.com/lmarinl1/BigDataProject/blob/master/twitter.conf) el cual debe tener todas las configuraciones del agente (flume, memory and hdfs) y se define de la siguiente manera:
+
+```
 TwitterAgent.sources= Twitter
 TwitterAgent.channels= MemChannel
 TwitterAgent.sinks=HDFS
@@ -35,7 +41,10 @@ TwitterAgent.sinks.HDFS.hdfs.rollInterval=600
 TwitterAgent.channels.MemChannel.type=memory
 TwitterAgent.channels.MemChannel.capacity=10000
 TwitterAgent.channels.MemChannel.transactionCapacity=10000
+```
+
 The consumerKey, consumerSecret, accessToken and accessTokenSecret have to be replaced with those obtained from https://dev.twitter.com/apps. And, TwitterAgent.sinks.HDFS.hdfs.path should point to the NameNode and the location in HDFS where the tweets will go to.
+
 
 The TwitterAgent.sources.Twitter.keywords value can be modified to get the tweets for some other topic like football, movies etc.
 
