@@ -3,10 +3,13 @@
 ### Install and Configure Flume
 
 1. Descargar Flume [Aqui](http://flume.apache.org/download.html).
-2. Mover [flume-sources-1.0-SNAPSHOT.jar](https://github.com/lmarinl1/BigDataProject/blob/master/lib/flume-sources-1.0-SNAPSHOT.jar) al  classpath, y ubicar dicho fichero en **conf/flume-env.sh file**.
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-3. FLUME_CLASSPATH=/usr/hdp/current/flume-server/lib/flume-sources-1.0-SNAPSHOT.jar
-The jar contains the java classes to pull the Tweets and save them into HDFS.
+
+2. Mover [flume-sources-1.0-SNAPSHOT.jar](https://github.com/lmarinl1/BigDataProject/blob/master/lib/flume-sources-1.0-SNAPSHOT.jar) al  classpath, y ubicar dicho fichero en **conf/flume-env.sh**.
+
+`$ EXPORT JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64`
+`$ EXPORT FLUME_CLASSPATH=/usr/hdp/current/flume-server/lib/flume-sources-1.0-SNAPSHOT.jar`
+
+Este .jar contiene todas las clases necesarias de java para extraer los Tweets e incertarlos en un lugar de HDFS.
 
 The conf/flume-twitter.conf should have all the agents (flume, memory and hdfs) defined as below.
 
